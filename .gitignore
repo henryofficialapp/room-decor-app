@@ -1,0 +1,26 @@
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+*.csproj
+*.sln
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+.vs/
+.idea/
+.DS_Store
+
+# Core logic tests (plain .NET, outside Unity)
+!/Tests/**/*.csproj
+/Tests/**/bin/
+/Tests/**/obj/
+
+# Never commit keys for affiliate programs or other services
+.env
+*.secrets.json
