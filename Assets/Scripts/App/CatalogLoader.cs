@@ -36,6 +36,8 @@ namespace RoomDecor.App
             public float depthMeters;
             public float heightMeters;
             public string buyUrl;
+            public string imageUrl;
+            public string colorHex;
         }
 
         public sealed class Result
@@ -85,7 +87,8 @@ namespace RoomDecor.App
                 DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             return new CatalogItem(entry.id, entry.name, category, entry.store, price, entry.currency,
-                priceChecked, entry.widthMeters, entry.depthMeters, entry.heightMeters, entry.buyUrl);
+                priceChecked, entry.widthMeters, entry.depthMeters, entry.heightMeters, entry.buyUrl,
+                entry.imageUrl, entry.colorHex);
         }
     }
 }

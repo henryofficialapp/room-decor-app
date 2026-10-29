@@ -6,8 +6,9 @@ namespace RoomDecor.App
 {
     /// <summary>
     /// The 3D stand-in for one placed item: a generic shape for its category,
-    /// scaled to the product's real width, depth and height. We draw our own
-    /// shapes instead of using retailers' 3D models, which are their copyright.
+    /// scaled to the product's real width, depth and height and painted in its
+    /// color from the feed. We draw our own shapes instead of using retailers'
+    /// 3D models or photos, which are their copyright.
     /// The item's back faces -Z before rotation, so it sits against a wall at 0 degrees.
     /// </summary>
     public sealed class FurnitureView : MonoBehaviour
@@ -25,7 +26,7 @@ namespace RoomDecor.App
 
             var item = placed.Item;
             float w = (float)item.WidthMeters, d = (float)item.DepthMeters, h = (float)item.HeightMeters;
-            view.BuildShape(item.Category, w, d, h);
+            view.BuildShape(item.Category, w, d, h, MainColor(item));
 
             // One collider over the whole footprint makes the item easy to tap.
             var collider = root.AddComponent<BoxCollider>();
@@ -49,44 +50,61 @@ namespace RoomDecor.App
                 renderer.material.color = tint.HasValue ? Color.Lerp(color, tint.Value, 0.6f) : color;
         }
 
-        void BuildShape(FurnitureCategory category, float w, float d, float h)
+        /// <summary>The feed's color when it has one, else a plain default for the category.</summary>
+        static Color MainColor(CatalogItem item)
+        {
+            if (!string.IsNullOrEmpty(item.ColorHex) && ColorUtility.TryParseHtmlString(item.ColorHex, out var color))
+                return color;
+            switch (item.Category)
+            {
+                case FurnitureCategory.Sofa:
+                case FurnitureCategory.Armchair:
+                    return Palette.Fabric;
+                case FurnitureCategory.Rug:
+                    return Palette.Rug;
+                default:
+                    return Palette.Wood;
+            }
+        }
+
+        void BuildShape(FurnitureCategory category, float w, float d, float h, Color main)
         {
             switch (category)
             {
                 case FurnitureCategory.BedFrame:
                 {
                     float baseH = Mathf.Min(0.3f, h);
-                    Box("Base", 0, baseH / 2, 0, w, baseH, d, Palette.Wood);
+                    Box("Base", 0, baseH / 2, 0, w, baseH, d, main);
                     Box("Bedding", 0, baseH + 0.1f, 0.05f, w * 0.96f, 0.2f, d * 0.9f, Palette.Bedding);
-                    Box("Headboard", 0, h / 2, -d / 2 + 0.04f, w, h, 0.08f, Palette.Wood);
+                    Box("Headboard", 0, h / 2, -d / 2 + 0.04f, w, h, 0.08f, main);
                     break;
                 }
                 case FurnitureCategory.Sofa:
                 case FurnitureCategory.Armchair:
                 {
                     float seatH = h * 0.45f, armW = Mathf.Min(0.15f, w * 0.15f), backD = d * 0.25f;
-                    Box("Seat", 0, seatH / 2, backD / 2, w, seatH, d - backD, Palette.Fabric);
-                    Box("Back", 0, h / 2, -d / 2 + backD / 2, w, h, backD, Palette.Fabric);
-                    Box("Arm L", -w / 2 + armW / 2, h * 0.65f / 2, 0, armW, h * 0.65f, d, Palette.Fabric);
-                    Box("Arm R", w / 2 - armW / 2, h * 0.65f / 2, 0, armW, h * 0.65f, d, Palette.Fabric);
+                    Box("Seat", 0, seatH / 2, backD / 2, w, seatH, d - backD, main);
+                    Box("Back", 0, h / 2, -d / 2 + backD / 2, w, h, backD, main);
+                    Box("Arm L", -w / 2 + armW / 2, h * 0.65f / 2, 0, armW, h * 0.65f, d, main);
+                    Box("Arm R", w / 2 - armW / 2, h * 0.65f / 2, 0, armW, h * 0.65f, d, main);
                     break;
                 }
                 case FurnitureCategory.CoffeeTable:
                 case FurnitureCategory.DiningTable:
                 case FurnitureCategory.Desk:
                 case FurnitureCategory.SideTable:
-                    Table(w, d, h);
+                    Table(w, d, h, main, main);
                     break;
                 case FurnitureCategory.DiningChair:
                 case FurnitureCategory.OfficeChair:
                 {
                     float seatH = Mathf.Min(0.47f, h * 0.5f);
-                    Table(w, d, seatH, Palette.Fabric);
-                    Box("Back", 0, (seatH + h) / 2, -d / 2 + 0.03f, w, h - seatH, 0.05f, Palette.Wood);
+                    Table(w, d, seatH, main, Palette.Wood);
+                    Box("Back", 0, (seatH + h) / 2, -d / 2 + 0.03f, w, h - seatH, 0.05f, main);
                     break;
                 }
                 case FurnitureCategory.Rug:
-                    Box("Rug", 0, 0.005f, 0, w, 0.01f, d, Palette.Rug);
+                    Box("Rug", 0, 0.005f, 0, w, 0.01f, d, main);
                     break;
                 case FurnitureCategory.Lamp:
                 case FurnitureCategory.FloorLamp:
@@ -99,7 +117,7 @@ namespace RoomDecor.App
                 }
                 default:
                     // Cabinets, shelves, dressers and anything new: a plain box.
-                    Box("Body", 0, h / 2, 0, w, h, d, Palette.Wood);
+                    Box("Body", 0, h / 2, 0, w, h, d, main);
                     break;
             }
 
@@ -107,15 +125,15 @@ namespace RoomDecor.App
                 parts.Add((renderer, renderer.material.color));
         }
 
-        void Table(float w, float d, float h, Color? topColor = null)
+        void Table(float w, float d, float h, Color topColor, Color legColor)
         {
             const float top = 0.04f, leg = 0.05f;
-            Box("Top", 0, h - top / 2, 0, w, top, d, topColor ?? Palette.Wood);
+            Box("Top", 0, h - top / 2, 0, w, top, d, topColor);
             float lx = w / 2 - leg / 2, lz = d / 2 - leg / 2, lh = h - top;
-            Box("Leg 1", -lx, lh / 2, -lz, leg, lh, leg, Palette.Wood);
-            Box("Leg 2", lx, lh / 2, -lz, leg, lh, leg, Palette.Wood);
-            Box("Leg 3", -lx, lh / 2, lz, leg, lh, leg, Palette.Wood);
-            Box("Leg 4", lx, lh / 2, lz, leg, lh, leg, Palette.Wood);
+            Box("Leg 1", -lx, lh / 2, -lz, leg, lh, leg, legColor);
+            Box("Leg 2", lx, lh / 2, -lz, leg, lh, leg, legColor);
+            Box("Leg 3", -lx, lh / 2, lz, leg, lh, leg, legColor);
+            Box("Leg 4", lx, lh / 2, lz, leg, lh, leg, legColor);
         }
 
         void Box(string name, float x, float y, float z, float sx, float sy, float sz, Color color) =>

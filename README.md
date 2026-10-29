@@ -56,7 +56,12 @@ under Signing & Capabilities, plug in the phone and press Run.
 - **Products come only from official sources**: retailers' affiliate feeds or
   official APIs, synced by our own server. Never scrape retailer websites.
 - **Our own 3D shapes**: furniture is drawn as generic shapes sized to the
-  product's real dimensions. Never copy a retailer's 3D or AR model files.
+  product's real dimensions and painted in its color from the feed. Never copy
+  a retailer's 3D or AR model files.
+- **Official photos, shown as supplied**: product photos come only from the
+  feed's image links and appear in the suggestions and cost lists. Don't crop,
+  cut out or edit them, and don't place them into the 3D room, unless a brand
+  gives written permission.
 - **No retailer logos**: show store names as plain text unless a program's brand rules allow more.
 - **Prices are estimates**: show when each price was checked and the
   disclaimer in `CostEstimate.Disclaimer`. Refresh prices at least daily.

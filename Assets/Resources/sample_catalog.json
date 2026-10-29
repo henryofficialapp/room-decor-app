@@ -13,7 +13,9 @@
       "widthMeters": 1.65,
       "depthMeters": 2.15,
       "heightMeters": 1.05,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#A47A4F",
+      "imageUrl": ""
     },
     {
       "id": "bed-full-white",
@@ -26,7 +28,9 @@
       "widthMeters": 1.42,
       "depthMeters": 2.0,
       "heightMeters": 0.95,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#ECEAE4",
+      "imageUrl": ""
     },
     {
       "id": "bed-king-upholstered",
@@ -39,7 +43,9 @@
       "widthMeters": 2.05,
       "depthMeters": 2.2,
       "heightMeters": 1.2,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#B9B2A6",
+      "imageUrl": ""
     },
     {
       "id": "bed-twin-kids",
@@ -52,7 +58,9 @@
       "widthMeters": 1.0,
       "depthMeters": 1.98,
       "heightMeters": 0.85,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#C9A273",
+      "imageUrl": ""
     },
     {
       "id": "mattress-queen-foam",
@@ -65,7 +73,8 @@
       "widthMeters": 1.52,
       "depthMeters": 2.03,
       "heightMeters": 0.3,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "mattress-twin",
@@ -78,7 +87,8 @@
       "widthMeters": 0.97,
       "depthMeters": 1.9,
       "heightMeters": 0.25,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "nightstand-2drawer",
@@ -91,7 +101,8 @@
       "widthMeters": 0.48,
       "depthMeters": 0.4,
       "heightMeters": 0.58,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "dresser-6drawer",
@@ -104,7 +115,8 @@
       "widthMeters": 1.5,
       "depthMeters": 0.48,
       "heightMeters": 0.8,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "dresser-3drawer",
@@ -117,7 +129,8 @@
       "widthMeters": 0.8,
       "depthMeters": 0.45,
       "heightMeters": 0.82,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "headboard-linen",
@@ -130,7 +143,9 @@
       "widthMeters": 1.6,
       "depthMeters": 0.1,
       "heightMeters": 1.2,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#D8CFC0",
+      "imageUrl": ""
     },
     {
       "id": "mirror-round",
@@ -143,7 +158,9 @@
       "widthMeters": 0.8,
       "depthMeters": 0.03,
       "heightMeters": 0.8,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#7A5A3C",
+      "imageUrl": ""
     },
     {
       "id": "curtains-linen",
@@ -156,7 +173,9 @@
       "widthMeters": 1.4,
       "depthMeters": 0.02,
       "heightMeters": 2.4,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#D8CFC0",
+      "imageUrl": ""
     },
     {
       "id": "rug-5x8",
@@ -169,7 +188,9 @@
       "widthMeters": 1.52,
       "depthMeters": 2.44,
       "heightMeters": 0.01,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#B56B5E",
+      "imageUrl": ""
     },
     {
       "id": "rug-8x10",
@@ -182,7 +203,9 @@
       "widthMeters": 2.44,
       "depthMeters": 3.05,
       "heightMeters": 0.01,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#6E7F8C",
+      "imageUrl": ""
     },
     {
       "id": "lamp-table",
@@ -195,7 +218,9 @@
       "widthMeters": 0.35,
       "depthMeters": 0.35,
       "heightMeters": 0.6,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#D8CFC0",
+      "imageUrl": ""
     },
     {
       "id": "lamp-floor-arc",
@@ -208,7 +233,8 @@
       "widthMeters": 0.4,
       "depthMeters": 0.4,
       "heightMeters": 1.6,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "lamp-desk",
@@ -221,7 +247,8 @@
       "widthMeters": 0.18,
       "depthMeters": 0.18,
       "heightMeters": 0.45,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "pendant-rattan",
@@ -234,7 +261,8 @@
       "widthMeters": 0.45,
       "depthMeters": 0.45,
       "heightMeters": 0.35,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "sofa-3seat-gray",
@@ -247,7 +275,9 @@
       "widthMeters": 2.13,
       "depthMeters": 0.92,
       "heightMeters": 0.84,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#8A9097",
+      "imageUrl": ""
     },
     {
       "id": "sofa-loveseat",
@@ -260,7 +290,9 @@
       "widthMeters": 1.52,
       "depthMeters": 0.88,
       "heightMeters": 0.82,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#2F3E5C",
+      "imageUrl": ""
     },
     {
       "id": "sofa-sectional",
@@ -273,7 +305,9 @@
       "widthMeters": 2.8,
       "depthMeters": 1.7,
       "heightMeters": 0.86,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#A7A196",
+      "imageUrl": ""
     },
     {
       "id": "coffee-table-oak",
@@ -286,7 +320,9 @@
       "widthMeters": 1.2,
       "depthMeters": 0.6,
       "heightMeters": 0.45,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#A47A4F",
+      "imageUrl": ""
     },
     {
       "id": "coffee-table-round",
@@ -299,7 +335,9 @@
       "widthMeters": 0.8,
       "depthMeters": 0.8,
       "heightMeters": 0.42,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#7A5A3C",
+      "imageUrl": ""
     },
     {
       "id": "tv-stand-60",
@@ -312,7 +350,8 @@
       "widthMeters": 1.52,
       "depthMeters": 0.4,
       "heightMeters": 0.55,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "armchair-accent",
@@ -325,7 +364,8 @@
       "widthMeters": 0.8,
       "depthMeters": 0.85,
       "heightMeters": 0.85,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "side-table",
@@ -338,7 +378,8 @@
       "widthMeters": 0.45,
       "depthMeters": 0.45,
       "heightMeters": 0.55,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "bookshelf-5shelf",
@@ -351,7 +392,8 @@
       "widthMeters": 0.8,
       "depthMeters": 0.3,
       "heightMeters": 1.8,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "bookshelf-low",
@@ -364,7 +406,8 @@
       "widthMeters": 0.8,
       "depthMeters": 0.3,
       "heightMeters": 0.9,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "dining-table-6",
@@ -377,7 +420,8 @@
       "widthMeters": 1.8,
       "depthMeters": 0.9,
       "heightMeters": 0.76,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "dining-table-4",
@@ -390,7 +434,9 @@
       "widthMeters": 1.07,
       "depthMeters": 1.07,
       "heightMeters": 0.76,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#7A5A3C",
+      "imageUrl": ""
     },
     {
       "id": "dining-chair-wood",
@@ -403,7 +449,8 @@
       "widthMeters": 0.45,
       "depthMeters": 0.52,
       "heightMeters": 0.82,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "dining-chair-upholstered",
@@ -416,7 +463,9 @@
       "widthMeters": 0.5,
       "depthMeters": 0.58,
       "heightMeters": 0.9,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#B9B2A6",
+      "imageUrl": ""
     },
     {
       "id": "sideboard-oak",
@@ -429,7 +478,9 @@
       "widthMeters": 1.6,
       "depthMeters": 0.45,
       "heightMeters": 0.8,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#A47A4F",
+      "imageUrl": ""
     },
     {
       "id": "desk-writing",
@@ -442,7 +493,8 @@
       "widthMeters": 1.2,
       "depthMeters": 0.6,
       "heightMeters": 0.75,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "desk-l",
@@ -455,7 +507,8 @@
       "widthMeters": 1.5,
       "depthMeters": 1.5,
       "heightMeters": 0.75,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "chair-office-mesh",
@@ -468,7 +521,9 @@
       "widthMeters": 0.65,
       "depthMeters": 0.65,
       "heightMeters": 1.1,
-      "buyUrl": ""
+      "buyUrl": "",
+      "colorHex": "#3A3B3F",
+      "imageUrl": ""
     },
     {
       "id": "filing-cabinet",
@@ -481,7 +536,8 @@
       "widthMeters": 0.4,
       "depthMeters": 0.5,
       "heightMeters": 0.7,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "storage-cube",
@@ -494,7 +550,8 @@
       "widthMeters": 1.12,
       "depthMeters": 0.39,
       "heightMeters": 1.12,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     },
     {
       "id": "toy-chest",
@@ -507,7 +564,8 @@
       "widthMeters": 0.9,
       "depthMeters": 0.45,
       "heightMeters": 0.5,
-      "buyUrl": ""
+      "buyUrl": "",
+      "imageUrl": ""
     }
   ]
 }

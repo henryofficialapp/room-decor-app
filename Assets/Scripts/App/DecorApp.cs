@@ -71,10 +71,12 @@ namespace RoomDecor.App
         string toast;
         float toastUntil;
         GUIStyle title, body, small, button, bigButton, panel;
+        ProductImages images;
 
         void Awake()
         {
             catalog = CatalogLoader.LoadSample();
+            images = new ProductImages(this);
             Application.targetFrameRate = 60;
 
             cam = Camera.main;
@@ -537,6 +539,7 @@ namespace RoomDecor.App
                 foreach (var item in rec.Items)
                 {
                     GUILayout.BeginHorizontal();
+                    Photo(item, 56);
                     GUILayout.Label($"{item.Name}\n<size=12>{item.Store} · {item.WidthMeters * 100:0} × {item.DepthMeters * 100:0} × {item.HeightMeters * 100:0} cm</size>", RichLabel());
                     GUILayout.Label(Money(item.Price, item.Currency), body, GUILayout.Width(80));
                     if (GUILayout.Button("Add", button, GUILayout.Width(64), GUILayout.Height(40))) Add(item);
@@ -565,6 +568,7 @@ namespace RoomDecor.App
             foreach (var line in estimate.Lines)
             {
                 GUILayout.BeginHorizontal(GUI.skin.box);
+                Photo(line.Item, 48);
                 var qty = line.Quantity > 1 ? $"{line.Quantity} × " : "";
                 GUILayout.Label($"{qty}{line.Item.Name}\n<size=12>{line.Item.Store} · price checked {line.Item.PriceCheckedUtc:MMM d, yyyy}</size>", RichLabel());
                 GUILayout.Label(Money(line.Subtotal, estimate.Currency), body, GUILayout.Width(88));
@@ -589,6 +593,15 @@ namespace RoomDecor.App
         }
 
         // ---------------------------------------------------------------- Helpers
+
+        /// <summary>The product's photo from the feed, or a plain tile with its category while it loads or when there is none.</summary>
+        void Photo(CatalogItem item, float size)
+        {
+            var photo = images.Get(item.ImageUrl);
+            var rect = GUILayoutUtility.GetRect(size, size, GUILayout.Width(size), GUILayout.Height(size));
+            if (photo != null) GUI.DrawTexture(rect, photo, ScaleMode.ScaleToFit);
+            else GUI.Box(rect, FurnitureCategoryInfo.DisplayName(item.Category), new GUIStyle(small) { alignment = TextAnchor.MiddleCenter });
+        }
 
         GUIStyle RichLabel() => new GUIStyle(body) { richText = true };
         GUIStyle RichButton() => new GUIStyle(bigButton) { richText = true };
